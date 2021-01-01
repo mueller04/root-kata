@@ -1,0 +1,24 @@
+{
+  "name": "trip_aggregator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "babel-node server.js",
+    "test": "ava"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "babel-preset-env": "^1.7.0",
+    "moment": "^2.29.1"
+  },
+  "devDependencies": {
+    "ava": "^3.15.0"
+  },
+  "ava": {
+    "files": [
+      "**/*.test.js"
+    ]
+  }
+}
