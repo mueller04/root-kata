@@ -11,7 +11,7 @@ const mapDrivers = (driver) => {
         .filter(outofBoundsTrips)
 
     return {
-        driver: driver[0],
+        name: driver[0],
         trips
     }
 }

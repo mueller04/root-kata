@@ -35,17 +35,17 @@ test('format trip data', t => {
 
     const expected = [
         {
-            driver: 'Dan', trips: [
+            name: 'Dan', trips: [
                 { milesDriven: 21.8, hours: 0.3333333333333333 },
                 { milesDriven: 17.3, hours: 0.5 }
             ]
         },
         {
-            driver: 'Lauren', trips: [
+            name: 'Lauren', trips: [
                 { milesDriven: 42, hours: 1.25 }
             ]
         },
-        { driver: 'Kumi', trips: [] }
+        { name: 'Kumi', trips: [] }
     ]
 
     t.deepEqual(result, expected)
@@ -82,14 +82,14 @@ test('discard out of bounds trips', t => {
 
     const expected = [
         {
-            driver: 'Dan', trips: []
+            name: 'Dan', trips: []
         },
         {
-            driver: 'Lauren', trips: [
+            name: 'Lauren', trips: [
                 { milesDriven: 42, hours: 1.25 }
             ]
         },
-        { driver: 'Kumi', trips: [] }
+        { name: 'Kumi', trips: [] }
     ]
 
     t.deepEqual(result, expected)
