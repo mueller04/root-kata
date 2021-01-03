@@ -1,7 +1,6 @@
 const moment = require("moment")
 
 const inputParser = (data) => {
-
     const lines = data.split(/\r?\n/);
 
     const parsedData = lines
@@ -13,9 +12,8 @@ const inputParser = (data) => {
 }
 
 const parseLine = ([type, ...items]) => {
-
     if (type === 'Driver') {
-        return { driver: items[0], trips: [] };
+        return { driver: items[0], trips: [] }
     }
 
     if (type === 'Trip') {
@@ -36,14 +34,13 @@ const parseTrip = ([driver, startTime, endTime, milesDriven]) => {
 }
 
 const combineTrips = (acc, data) => {
-
     if (!acc[data.driver]) {
         acc[data.driver] = { trips: [] }
     }
 
     const currentTrips = acc[data.driver].trips
     acc[data.driver].trips = [...data.trips, ...currentTrips]
-    return acc;
+    return acc
 }
 
 module.exports = { inputParser }

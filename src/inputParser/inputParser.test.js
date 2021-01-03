@@ -1,4 +1,4 @@
-const test = require('ava');
+const test = require('ava')
 const { inputParser } = require("./inputParser")
 const moment = require("moment")
 
@@ -27,7 +27,6 @@ test('input data is parsed', t => {
                     endTime: moment('07:45', "HH:mm"),
                     milesDriven: 17.3
                 }
-
             ]
         },
         'Lauren': {
@@ -45,4 +44,4 @@ test('input data is parsed', t => {
     }
 
     t.deepEqual(result, expected)
-});
+})
