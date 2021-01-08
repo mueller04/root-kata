@@ -1,7 +1,37 @@
 const test = require('ava')
 const { reportBuilder } = require("./reportBuilder")
 
-test('build report', t => {
+test('round values to nearest integer', t => {
+
+    const input = [
+        {
+            name: 'Lauren', trips: [
+                { milesDriven: 42.4, hours: 1.25 }
+            ]
+        }
+    ]
+
+    const result = reportBuilder(input)
+
+    const expected = "Lauren: 42 miles @ 34 mph\n"
+
+    t.is(result.trim(), expected.trim())
+});
+
+test('report no speed for driver with no trips', t => {
+
+    const input = [
+        { name: 'Kumi', trips: [] }
+    ]
+
+    const result = reportBuilder(input)
+
+    const expected = "Kumi: 0 miles\n"
+
+    t.is(result.trim(), expected.trim())
+});
+
+test('build report with expected output sorted by miles driven descending', t => {
 
     const input = [
         {
